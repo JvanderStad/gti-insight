@@ -6,6 +6,8 @@
         {
             return sector switch
             {
+                Sector.AgTech => "Argri-food and AgTech",
+                Sector.CircularEconomy => "Circular economy",
                 Sector.DigiTech => "DigiTech",
                 Sector.FinTech => "Financial Services and FinTech",
                 _ => sector.ToString(),

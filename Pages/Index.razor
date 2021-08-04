@@ -1,0 +1,175 @@
+﻿@page "/"
+@namespace GTIinsight.Pages
+
+<fieldset>
+    <legend>
+        EOI Insight
+    </legend>
+
+    <div class="text-muted mb-2">
+        This is an interactive chart giving insight in the Expression Of Interests for the <b>Global Talent Visa</b>,
+        up to date until <b>25 June 2021</b><br />
+        <br />
+        Note: Not all sectors have been added
+    </div>
+
+
+    <div class="border p-2 mb-2">
+        <div class="mb-2 text-black-50 font-italic">
+            Filter on sector
+        </div>
+        @foreach (var sector in _allSectors)
+        {
+            <div>
+                <input type="checkbox"
+                       checked="@(_sectorSelection[sector]?"checked":null)"
+                       @onchange="e => SetSelection(sector, e)" @key="sector" id="@($"sector_{sector}")" />
+                <label for="@($"sector_{sector}")">
+                    @sector.GetDisplayName()
+                </label>
+            </div>
+        }
+    </div>
+
+    <div class="border p-2 mb-2">
+        <div class="mb-2 text-black-50 font-italic">
+            Chart
+        </div>
+        <div style="width: 1000px; height: 700px; ">
+            <Chart Config="_config" @ref="_chart"></Chart>
+        </div>
+    </div>
+
+    <div class="border p-2 ">
+        <div class="mb-2 text-black-50 font-italic">
+            Data
+        </div>
+        <div>
+            @if (_metrics != null)
+            {
+                <table class="table table-bordered">
+                     <tr>
+                        <th>
+                            Sector
+                        </th>
+                        <th>
+                            Metric
+                        </th>
+                        @foreach (var period in DataCollection.Periods)
+                        {
+                            <th>
+                                @period
+                            </th>
+                        }
+                    </tr>
+                    @foreach (var sector in _selectedSectors)
+                    {
+                       
+                        var sectorMetrics = _metrics.Where(x => x.Sector == sector);
+
+                        <tr>
+                            <td>
+                                @sector.GetDisplayName()
+                            </td>
+                            <td>
+                                EOI Submitted
+                            </td>
+                            @foreach (var period in DataCollection.Periods)
+                            {
+                                <td class="text-right">
+                                    @sectorMetrics.Where(x => x.Period.Value == period.Value).Sum(x => x.Submitted)
+                                </td>
+                            }
+                        </tr>
+                        <tr>
+                            <td>
+                                @sector.GetDisplayName()
+                            </td>
+                            <td>
+                                Invited
+                            </td>
+                            @foreach (var period in DataCollection.Periods)
+                            {
+                                <td class="text-right">
+                                    @sectorMetrics.Where(x => x.Period.Value == period.Value).FirstOrDefault()?.Invited
+                                </td>
+                            }
+                        </tr>
+                        <tr>
+                            <td>
+                                @sector.GetDisplayName()
+                            </td>
+                            <td>
+                                Rejected
+                            </td>
+                            @foreach (var period in DataCollection.Periods)
+                            {
+                                <td class="text-right">
+                                    @sectorMetrics.Where(x => x.Period.Value == period.Value).FirstOrDefault()?.Rejected
+                                </td>
+                            }
+                        </tr>
+                        <tr>
+                            <td>
+                                @sector.GetDisplayName()
+                            </td>
+                            <td>
+                                Pending
+                            </td>
+                            @foreach (var period in DataCollection.Periods)
+                            {
+                                <td class="text-right">
+                                    @sectorMetrics.Where(x => x.Period.Value == period.Value).FirstOrDefault()?.Pending
+                                </td>
+                            }
+                        </tr>
+                        <tr>
+                            <td>
+                                @sector.GetDisplayName()
+                            </td>
+                            <td>
+                                Processed
+                            </td>
+                            @foreach (var period in DataCollection.Periods)
+                            {
+                                <td class="text-right">
+                                    @sectorMetrics.Where(x => x.Period.Value == period.Value).FirstOrDefault()?.ProcessedPercentage
+                                </td>
+                            }
+                        </tr>
+                        <tr>
+                            <td>
+                                @sector.GetDisplayName()
+                            </td>
+                            <td>
+                                Invited % <small class="text-muted">(of processed)</small>
+                            </td>
+                            @foreach (var period in DataCollection.Periods)
+                            {
+                                <td class="text-right">
+                                    @sectorMetrics.Where(x => x.Period.Value == period.Value).FirstOrDefault()?.InvitedOfProcessedPercentage
+                                </td>
+                            }
+                        </tr>
+                    <tr>
+                            <td>
+                                @sector.GetDisplayName()
+                            </td>
+                            <td>
+                                Rejected % <small class="text-muted">(of processed)</small>
+                            </td>
+                            @foreach (var period in DataCollection.Periods)
+                            {
+                                <td class="text-right">
+                                    @sectorMetrics.Where(x => x.Period.Value == period.Value).FirstOrDefault()?.RejectedOfProcessedPercentage
+                                </td>
+                            }
+                        </tr>
+                    
+                    }
+                </table>
+            }
+        </div>
+    </div>
+
+</fieldset>

@@ -118,10 +118,7 @@ namespace GTIinsight.Shared
             _gtiMetrics.Add(new GTIMetric(Sector.AgTech, new Period(2021, 5), 75, 6, 5));
             _gtiMetrics.Add(new GTIMetric(Sector.AgTech, new Period(2021, 6), 55, 5, 0));
 
-
-
-
-            // AgTech
+            // Circular Economy
             _gtiMetrics.Add(new GTIMetric(Sector.CircularEconomy, new Period(2019, 9), 0, 0, 0));
             _gtiMetrics.Add(new GTIMetric(Sector.CircularEconomy, new Period(2019, 10), 0, 0, 0));
             _gtiMetrics.Add(new GTIMetric(Sector.CircularEconomy, new Period(2019, 11), 0, 0, 0));
@@ -171,6 +168,53 @@ namespace GTIinsight.Shared
             _gtiMetrics.Add(new GTIMetric(Sector.Defence, new Period(2021, 6), 48, /*<5*/ 5, 0));
 
 
+            // Energy
+            _gtiMetrics.Add(new GTIMetric(Sector.Energy, new Period(2019, 9), /*<5*/ 5, /*<5*/ 5, 00));
+            _gtiMetrics.Add(new GTIMetric(Sector.Energy, new Period(2019, 10), 6, /*<5*/ 3, /*<5*/ 3));
+            _gtiMetrics.Add(new GTIMetric(Sector.Energy, new Period(2019, 11), 25, 13, 12));
+            _gtiMetrics.Add(new GTIMetric(Sector.Energy, new Period(2019, 12), 45, 28, 17));
+            _gtiMetrics.Add(new GTIMetric(Sector.Energy, new Period(2020, 1), 63, 46, 17));
+            _gtiMetrics.Add(new GTIMetric(Sector.Energy, new Period(2020, 2), 120, 78, 42));
+            _gtiMetrics.Add(new GTIMetric(Sector.Energy, new Period(2020, 3), 206, 152, 54));
+            _gtiMetrics.Add(new GTIMetric(Sector.Energy, new Period(2020, 4), 215, 129, 86));
+            _gtiMetrics.Add(new GTIMetric(Sector.Energy, new Period(2020, 5), 294, 170, 124));
+            _gtiMetrics.Add(new GTIMetric(Sector.Energy, new Period(2020, 6), 408, 150, 258));
+            _gtiMetrics.Add(new GTIMetric(Sector.Energy, new Period(2020, 7), 321, 108, 212));
+            _gtiMetrics.Add(new GTIMetric(Sector.Energy, new Period(2020, 8), 245, 69, 174));
+            _gtiMetrics.Add(new GTIMetric(Sector.Energy, new Period(2020, 9), 209, 66, 137));
+            _gtiMetrics.Add(new GTIMetric(Sector.Energy, new Period(2020, 10), 231, 51, 97));
+            _gtiMetrics.Add(new GTIMetric(Sector.Energy, new Period(2020, 11), 224, 39, 31));
+            _gtiMetrics.Add(new GTIMetric(Sector.Energy, new Period(2020, 12), 218, 31, 36));
+            _gtiMetrics.Add(new GTIMetric(Sector.Energy, new Period(2021, 1), 145, 24, 20));
+            _gtiMetrics.Add(new GTIMetric(Sector.Energy, new Period(2021, 2), 112, 24, 12));
+            _gtiMetrics.Add(new GTIMetric(Sector.Energy, new Period(2021, 3), 113, 24, 8));
+            _gtiMetrics.Add(new GTIMetric(Sector.Energy, new Period(2021, 4), 85, 14, 10));
+            _gtiMetrics.Add(new GTIMetric(Sector.Energy, new Period(2021, 5), 111, 21, 10));
+            _gtiMetrics.Add(new GTIMetric(Sector.Energy, new Period(2021, 6), 85, /*<5*/ 5, /*<5*/ 5));
+
+            // Health
+            _gtiMetrics.Add(new GTIMetric(Sector.Health, new Period(2019, 9), /*<5*/ 4, /*<5*/ 4, 0));
+            _gtiMetrics.Add(new GTIMetric(Sector.Health, new Period(2019, 10), /*<5*/ 4, /*<5*/ 2, /*<5*/ 2));
+            _gtiMetrics.Add(new GTIMetric(Sector.Health, new Period(2019, 11), 28, 20, 8));
+            _gtiMetrics.Add(new GTIMetric(Sector.Health, new Period(2019, 12), 33, 31, /*<5*/ 2));
+            _gtiMetrics.Add(new GTIMetric(Sector.Health, new Period(2020, 1), 31, 26, 5));
+            _gtiMetrics.Add(new GTIMetric(Sector.Health, new Period(2020, 2), 95, 60, 35));
+            _gtiMetrics.Add(new GTIMetric(Sector.Health, new Period(2020, 3), 144, 111, 33));
+            _gtiMetrics.Add(new GTIMetric(Sector.Health, new Period(2020, 4), 190, 136, 54));
+            _gtiMetrics.Add(new GTIMetric(Sector.Health, new Period(2020, 5), 273, 194, 79));
+            _gtiMetrics.Add(new GTIMetric(Sector.Health, new Period(2020, 6), 431, 169, 262));
+            _gtiMetrics.Add(new GTIMetric(Sector.Health, new Period(2020, 7), 301, 118, 181));
+            _gtiMetrics.Add(new GTIMetric(Sector.Health, new Period(2020, 8), 226, 77, 148));
+            _gtiMetrics.Add(new GTIMetric(Sector.Health, new Period(2020, 9), 257, 91, 158));
+            _gtiMetrics.Add(new GTIMetric(Sector.Health, new Period(2020, 10), 224, 57, 79));
+            _gtiMetrics.Add(new GTIMetric(Sector.Health, new Period(2020, 11), 214, 38, 22));
+            _gtiMetrics.Add(new GTIMetric(Sector.Health, new Period(2020, 12), 205, 42, 32));
+            _gtiMetrics.Add(new GTIMetric(Sector.Health, new Period(2021, 1), 145, 36, 25));
+            _gtiMetrics.Add(new GTIMetric(Sector.Health, new Period(2021, 2), 176, 53, 21));
+            _gtiMetrics.Add(new GTIMetric(Sector.Health, new Period(2021, 3), 184, 50, 25));
+            _gtiMetrics.Add(new GTIMetric(Sector.Health, new Period(2021, 4), 178, 37, 22));
+            _gtiMetrics.Add(new GTIMetric(Sector.Health, new Period(2021, 5), 153, 28, 15));
+            _gtiMetrics.Add(new GTIMetric(Sector.Health, new Period(2021, 6), 174, 16, /*<5*/ 4));
 
             // some bookkeeping
             SetupMetrics();

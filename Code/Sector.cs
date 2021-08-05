@@ -6,6 +6,8 @@
         CircularEconomy,
         DigiTech,
         Defence,
-        FinTech
+        Energy,
+        FinTech,
+        Health,
     }
 }

@@ -10,7 +10,9 @@
                 Sector.CircularEconomy => "Circular economy",
                 Sector.Defence => "Defence, advanced manufacturing and space",
                 Sector.DigiTech => "DigiTech",
+                Sector.Energy => "Energy",
                 Sector.FinTech => "Financial Services and FinTech",
+                Sector.Health => "Health industries",
                 _ => sector.ToString(),
             };
         }

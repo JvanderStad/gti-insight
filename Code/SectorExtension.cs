@@ -8,6 +8,7 @@
             {
                 Sector.AgTech => "Argri-food and AgTech",
                 Sector.CircularEconomy => "Circular economy",
+                Sector.Defence => "Defence, advanced manufacturing and space",
                 Sector.DigiTech => "DigiTech",
                 Sector.FinTech => "Financial Services and FinTech",
                 _ => sector.ToString(),

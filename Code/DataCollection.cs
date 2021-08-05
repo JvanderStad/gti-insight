@@ -146,7 +146,29 @@ namespace GTIinsight.Shared
             _gtiMetrics.Add(new GTIMetric(Sector.CircularEconomy, new Period(2021, 6), 9, /*<5*/ 5, /*<5*/ 4));
 
 
-
+            //Defence
+            _gtiMetrics.Add(new GTIMetric(Sector.Defence, new Period(2019, 9), /*<5*/ 5, /*<5*/ 5, 0));
+            _gtiMetrics.Add(new GTIMetric(Sector.Defence, new Period(2019, 10), /*<5*/ 4, /*<5*/ 2, /*<5*/ 2));
+            _gtiMetrics.Add(new GTIMetric(Sector.Defence, new Period(2019, 11), 15, 13, /*<5*/ 2));
+            _gtiMetrics.Add(new GTIMetric(Sector.Defence, new Period(2019, 12), 17, 12, 5));
+            _gtiMetrics.Add(new GTIMetric(Sector.Defence, new Period(2020, 1), 28, 20, 8));
+            _gtiMetrics.Add(new GTIMetric(Sector.Defence, new Period(2020, 2), 36, 25, 11));
+            _gtiMetrics.Add(new GTIMetric(Sector.Defence, new Period(2020, 3), 64, 38, 25));
+            _gtiMetrics.Add(new GTIMetric(Sector.Defence, new Period(2020, 4), 52, 40, 12));
+            _gtiMetrics.Add(new GTIMetric(Sector.Defence, new Period(2020, 5), 104, 57, 46));
+            _gtiMetrics.Add(new GTIMetric(Sector.Defence, new Period(2020, 6), 143, 47, 96));
+            _gtiMetrics.Add(new GTIMetric(Sector.Defence, new Period(2020, 7), 110, 40, 70));
+            _gtiMetrics.Add(new GTIMetric(Sector.Defence, new Period(2020, 8), 91, 20, 71));
+            _gtiMetrics.Add(new GTIMetric(Sector.Defence, new Period(2020, 9), 75, 25, 48));
+            _gtiMetrics.Add(new GTIMetric(Sector.Defence, new Period(2020, 10), 86, 26, 30));
+            _gtiMetrics.Add(new GTIMetric(Sector.Defence, new Period(2020, 11), 101, 15, 19));
+            _gtiMetrics.Add(new GTIMetric(Sector.Defence, new Period(2020, 12), 75, 16, 10));
+            _gtiMetrics.Add(new GTIMetric(Sector.Defence, new Period(2021, 1), 60, 7, 11));
+            _gtiMetrics.Add(new GTIMetric(Sector.Defence, new Period(2021, 2), 51, 15, 6));
+            _gtiMetrics.Add(new GTIMetric(Sector.Defence, new Period(2021, 3), 57, 8, /*<5*/ 5));
+            _gtiMetrics.Add(new GTIMetric(Sector.Defence, new Period(2021, 4), 51, 12, 5));
+            _gtiMetrics.Add(new GTIMetric(Sector.Defence, new Period(2021, 5), 39, 5, /*<5*/ 5));
+            _gtiMetrics.Add(new GTIMetric(Sector.Defence, new Period(2021, 6), 48, /*<5*/ 5, 0));
 
 
 

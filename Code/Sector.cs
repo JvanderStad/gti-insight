@@ -5,6 +5,7 @@
         AgTech,
         CircularEconomy,
         DigiTech,
+        Defence,
         FinTech
     }
 }

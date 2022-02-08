@@ -10,9 +10,12 @@
                 Sector.CircularEconomy => "Circular economy",
                 Sector.Defence => "Defence, advanced manufacturing and space",
                 Sector.DigiTech => "DigiTech",
-                Sector.Energy => "Energy",
+                Sector.Energy => "Energy and Mining Technology",
                 Sector.FinTech => "Financial Services and FinTech",
                 Sector.Health => "Health industries",
+                Sector.Education => "Education",
+                Sector.Resources => "Resources",
+                Sector.Tourism => "Infrastructure and tourism",
                 _ => sector.ToString(),
             };
         }

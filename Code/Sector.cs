@@ -4,10 +4,13 @@
     {
         AgTech,
         CircularEconomy,
-        DigiTech,
         Defence,
+        DigiTech,
         Energy,
         FinTech,
         Health,
+        Education,
+        Resources,
+        Tourism
     }
 }

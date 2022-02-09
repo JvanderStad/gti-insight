@@ -16,7 +16,7 @@ This is an interactive chart giving insight into the  Expression Of Interests (E
 - [FA 21/11/00439](https://www.homeaffairs.gov.au/foi/files/2021/fa-211100439-document-released.PDF) 📆 9 November 2021
 - [FA 21/07/00057](https://www.homeaffairs.gov.au/foi/files/2021/fa-210700057-document-released.PDF) 📆 25 June 2021
 
-## 🙅🏻 Author
+## 👤 Author
 
 - Jeffrey van der Stad
 

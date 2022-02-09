@@ -16,35 +16,12 @@ namespace GTIinsight.Shared
             return new Period((int)year, (int)month);
         }
         private static readonly List<GTIMetric> _gtiMetrics = new();
-        private static Period _minPeriod;
-        private static Period _maxPeriod;
-        public static Period[] Periods;
+        private static Period _minPeriod = default!;
+        private static Period _maxPeriod = default!;
+        public static readonly List<Period> Periods = new();
 
         static DataCollection()
         {
-            //_gtiMetrics.Add(new GTIMetric(Sector.CircularEconomy, new Period(2019, 9), 0, 0, 0));
-            //_gtiMetrics.Add(new GTIMetric(Sector.CircularEconomy, new Period(2019, 10), 0, 0, 0));
-            //_gtiMetrics.Add(new GTIMetric(Sector.CircularEconomy, new Period(2019, 11), 0, 0, 0));
-            //_gtiMetrics.Add(new GTIMetric(Sector.CircularEconomy, new Period(2019, 12), 0, 0, 0));
-            //_gtiMetrics.Add(new GTIMetric(Sector.CircularEconomy, new Period(2020, 1), 0, 0, 0));
-            //_gtiMetrics.Add(new GTIMetric(Sector.CircularEconomy, new Period(2020, 2), 0, 0, 0));
-            //_gtiMetrics.Add(new GTIMetric(Sector.CircularEconomy, new Period(2020, 3), 0, 0, 0));
-            //_gtiMetrics.Add(new GTIMetric(Sector.CircularEconomy, new Period(2020, 4), 0, 0, 0));
-            //_gtiMetrics.Add(new GTIMetric(Sector.CircularEconomy, new Period(2020, 5), 0, 0, 0));
-            //_gtiMetrics.Add(new GTIMetric(Sector.CircularEconomy, new Period(2020, 6), 0, 0, 0));
-            //_gtiMetrics.Add(new GTIMetric(Sector.CircularEconomy, new Period(2020, 7), 0, 0, 0));
-            //_gtiMetrics.Add(new GTIMetric(Sector.CircularEconomy, new Period(2020, 8), 0, 0, 0));
-            //_gtiMetrics.Add(new GTIMetric(Sector.CircularEconomy, new Period(2020, 9), 0, 0, 0));
-            //_gtiMetrics.Add(new GTIMetric(Sector.CircularEconomy, new Period(2020, 10), 0, 0, 0));
-            //_gtiMetrics.Add(new GTIMetric(Sector.CircularEconomy, new Period(2020, 11), 0, 0, 0));
-            //_gtiMetrics.Add(new GTIMetric(Sector.CircularEconomy, new Period(2020, 12), 0, 0, 0));
-            //_gtiMetrics.Add(new GTIMetric(Sector.CircularEconomy, new Period(2021, 1), 0, 0, 0));
-            //_gtiMetrics.Add(new GTIMetric(Sector.CircularEconomy, new Period(2021, 2), 0, 0, 0));
-            //_gtiMetrics.Add(new GTIMetric(Sector.CircularEconomy, new Period(2021, 3), 0, 0, 0));
-            //_gtiMetrics.Add(new GTIMetric(Sector.CircularEconomy, new Period(2021, 4), 0, 0, 0));
-            //_gtiMetrics.Add(new GTIMetric(Sector.CircularEconomy, new Period(2021, 5), 0, 0, 0));
-            //_gtiMetrics.Add(new GTIMetric(Sector.CircularEconomy, new Period(2021, 6), 0, 0, 0));
-
             // DIGITECH
             _gtiMetrics.Add(new GTIMetric(Sector.DigiTech, new Period(2019, 9), 13, 8, 5));
             _gtiMetrics.Add(new GTIMetric(Sector.DigiTech, new Period(2019, 10), 12, 11, 1));
@@ -137,9 +114,7 @@ namespace GTIinsight.Shared
             _gtiMetrics.Add(new GTIMetric(Sector.Health, new Period(2020, 7), 301, 118, 181));
 
             ////////////////////////////////////////////////////
-
-
-
+            // METRICS BASED ON FA 21/11/00439
             _gtiMetrics.Add(new GTIMetric(Sector.AgTech, new Period(2020, 8), 123, 31, 92)); 
             _gtiMetrics.Add(new GTIMetric(Sector.Defence, new Period(2020, 8), 91, 20, 71));
             _gtiMetrics.Add(new GTIMetric(Sector.DigiTech, new Period(2020, 8), 412, 118, 294));
@@ -294,11 +269,6 @@ namespace GTIinsight.Shared
             _gtiMetrics.Add(new GTIMetric(Sector.Resources, new Period(2021, 11), 14, 1, 0));
 
 
-
-
-
-
-
             // some bookkeeping
             SetupMetrics();
         }
@@ -311,15 +281,11 @@ namespace GTIinsight.Shared
             var current = _minPeriod.ToDateTime();
             var max = _maxPeriod.ToDateTime();
 
-            var periods = new List<Period>();
-
             while (current <= max)
             {
-                periods.Add(new Period(current.Year, current.Month));
+                Periods.Add(new Period(current.Year, current.Month));
                 current = current.AddMonths(1);
             }
-
-            Periods = periods.ToArray();
         }
 
         public static IEnumerable<string> GetPeriodLabels()

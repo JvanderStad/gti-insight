@@ -2,6 +2,8 @@
 
 This is an interactive chart giving insight into the  Expression Of Interests (EOI) workload for the **[Global Talent Visa](https://immi.homeaffairs.gov.au/visas/working-in-australia/visas-for-innovation/global-talent-independent-program)** by the Department of Home Affairs (DHA).
 
+![Screenshot](screenshot.png)
+
 ## 🌍 Hosted at
 
 [https://yellow-plant-089671c00.azurestaticapps.net/](https://yellow-plant-089671c00.azurestaticapps.net/)

@@ -1,4 +1,4 @@
-﻿#nullable enable
+#nullable enable
 
 using System;
 using System.Collections.Generic;
@@ -295,7 +295,7 @@ namespace GTIinsight.Shared
 
         public static IEnumerable<Metric> GetSectorMetrics(Sector[] sectors)
         {
-            IEnumerable<GTIMetric> q = GetMetrics(sectors);
+            var q = GetMetrics(sectors);
 
             foreach (var period in Periods)
             {
@@ -315,14 +315,24 @@ namespace GTIinsight.Shared
             IEnumerable<GTIMetric> q;
 
             if (sectors.Length == 0)
-                q = _gtiMetrics;
-            else
-                q = _gtiMetrics
+			{
+				q = _gtiMetrics;
+			}
+			else
+			{
+				q = _gtiMetrics
                   .Where(x => sectors.Contains(x.Sector));
-            return q;
+			}
+
+			return q;
         }
 
-        public record Metric(int Submitted, int Invited, int Rejected)
+		public static IEnumerable<GTIMetric> GetMetrics(Period period)
+		{
+			return _gtiMetrics.Where(x => x.Period.Value == period.Value);
+		}
+
+		public record Metric(int Submitted, int Invited, int Rejected)
         {
             public int Pending => Submitted - Invited - Rejected;
 

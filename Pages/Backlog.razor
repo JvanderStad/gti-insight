@@ -1,0 +1,68 @@
+@page "/backlog"
+@namespace GTIinsight.Pages
+
+<fieldset>
+    <legend>
+        Backlog
+    </legend>
+    
+    Enter your EOI submission month and sector to see total EOI's on-hand before this period (inclusive)
+
+	<div class="form-group mt-4">
+        <label>EOI submission</label>
+        <select class="form-control" @bind="SelectedPeriod">
+            <optgroup label="No selection">
+                <option value="0">-- Select period --</option>
+            </optgroup>
+            <optgroup label="Periods">
+            @foreach (var period in DataCollection.Periods.OrderByDescending(x=>x.Value))
+            {
+                <option @key="period" value="@period.Value">@period</option>
+            }
+            </optgroup>
+        </select>
+    </div>
+
+
+    <div class="form-group mt-4">
+        <label>Sector</label>
+        <select class="form-control" @bind="SelectedSector">
+            <optgroup label="No selection">
+                <option value="">-- Select sector --</option>
+            </optgroup>
+            <optgroup label="Sectors">
+            @foreach (var sector in _allSectors.OrderBy(x=>x.GetDisplayName()))
+            {
+                <option @key="sector" value="@sector.ToString()">@sector.GetDisplayName()</option>
+            }
+            </optgroup>
+        </select>
+    </div>
+
+	@if (SelectedPeriod > 0)
+	{
+		<div class="mt-4">
+			<label class=d-block>Result</label>
+			<div class="card text-dark bg-light mr-3 d-inline-block" style="max-width: 18rem;">
+				<div class="card-header">Total EOI's on-hand</div>
+				<div class="card-body text-center">
+				<h1 class="card-title">@_backlogAll</h1>
+				</div>
+			</div>
+			@if (SelectedSector != null)
+			{
+				<div class="card text-dark bg-light mb-3 d-inline-block" style="max-width: 18rem;">
+				  <div class="card-header">Sector EOI's on-hand</div>
+				  <div class="card-body text-center">
+					<h1 class="card-title">@_backlogSector</h1>
+				  </div>
+				</div>
+			}
+    </div>
+	}
+
+
+	
+
+</fieldset>
+

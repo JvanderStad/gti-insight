@@ -3,6 +3,9 @@
     <button class="navbar-toggler" @onclick="ToggleNavMenu">
         <span class="navbar-toggler-icon"></span>
     </button>
+	<div class="small text-white-50" title="Last data update">
+		@DataCollection.LastUpdate.ToString("d MMMM yyyy", System.Globalization.CultureInfo.InvariantCulture)
+	</div>
 </div>
 
 <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
@@ -24,6 +27,7 @@
         </li>
     </ul>
 </div>
+
 
 @code {
     private bool collapseNavMenu = true;

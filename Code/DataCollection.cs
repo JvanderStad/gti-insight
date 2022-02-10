@@ -8,6 +8,8 @@ namespace GTIinsight.Shared
 {
     public static class DataCollection
     {
+		public static readonly DateTime LastUpdate = new(2021, 11, 9);
+
         public static Period GetPeriod(int periodValue)
         {
             var year = Math.Floor(periodValue / 100m);
